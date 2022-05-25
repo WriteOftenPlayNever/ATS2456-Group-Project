@@ -57,6 +57,7 @@ class Title extends Effect {
         let progress = (new Date().getTime() - this.startTime.getTime()) / this.duration;
         textAlign(CENTER, CENTER);
         textFont('Courier New');
+        textSize(12);
         fill(10, 185, 10);
         noStroke();
 
@@ -68,6 +69,28 @@ class Title extends Effect {
     }
 }
 
+class Fader extends Effect {
+
+    constructor(duration, delay, lines) {
+        super(duration, delay);
+
+        this.lines = lines;
+    }
+
+    draw(x, y) {
+        let progress = ((new Date().getTime() - this.delay) - this.startTime.getTime()) / this.duration;
+        textAlign(CENTER, CENTER);
+        textSize(19);
+        textFont('Courier New');
+        noStroke();
+
+        if (progress > 0) {
+            fill(10, 185, 10, Math.abs(Math.sin(progress * Math.PI * this.lines.length)) * 255);
+            text(this.lines[Math.floor(progress * this.lines.length) % this.lines.length], windowWidth/2, windowHeight/1.6);
+        }
+    }
+
+}
 
 
 
@@ -84,10 +107,11 @@ let titleText;
 let subtitleText = [
     "PAY NO ATTENTION TO THAT MAN BEHIND THE CURTAIN.",
     "YOU ARE BEING PROFILED, STAY CALM.",
+    "PLEASE DISABLE ADBLOCKER.",
     "I CAN'T BELIEVE IT'S NOT ELECTION FRAUD!",
     "DO YOU HAVE TWO-FACTOR AUTHENTICATION?",
+    "THOSE WHO PLAY WITH THE DEVIL'S TOYS",
     "PLEASE RATE THIS EXPERIENCE ON A SCALE FROM 1-5.",
-    "PLEASE DISABLE ADBLOCKER.",
     "AND FOR MY NEXT TRICK...",
     "VEGAN, AND CRUELTY-FREE."
 ];
@@ -113,6 +137,7 @@ window.setup = function() {
 
 
     screens[0].push(new Title(3000, titleText.join("\n")));
+    screens[0].push(new Fader(subtitleText.length * 5000, 3100, subtitleText));
 }
 
 
@@ -125,7 +150,6 @@ window.draw = function() {
     screens[0].forEach(x => x.draw());
 
 
-    
 }
 
 
