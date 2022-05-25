@@ -1,0 +1,28 @@
+Afriat, A., Dvir-Gvirsman, S., Tsuriel, K., & Ivan, L. (2021). “This is capitalism. It is not illegal”: Users’ attitudes toward institutional privacy following the Cambridge Analytica scandal. The Information Society, 37(2), 115–127, https://doi.org/10.1080/01972243.2020.1870596
+Gordon, S., & Ford, R. (2006). On the definition and classification of cybercrime. Journal of Computer Virology, 2, 13–20. https://doi.org/10.1007/s11416-006-0015-z
+Granville, K. (2018, March 19). Facebook and Cambridge Analytica: What you need to know as fallout widens. The New York Times. https://www.nytimes.com/2018/03/19/technology/facebook-cambridge-analytica-explained.html
+Grewal, P. (2018, March 16). Suspending Cambridge Analytica and SCL Group From Facebook. Meta. https://about.fb.com/news/2018/03/suspending-cambridge-analytica/
+Hinds, J., Williams, E., & Joinson, A. (2020). “It wouldn't happen to me”: Privacy concerns and perspectives following the Cambridge Analytica scandal. International Journal of Human-Computer Studies ,143, 1–14. https://doi.org/10.1016/j.ijhcs.2020.102498
+Holt, T., Bossler, A., & Seigfried-Spellar, K. (2015). Cybercrime and digital forensics: An introduction (1st ed.). Routledge. https://www.vox.com/2018/3/20/17138756/facebook-data-breach-cambridge-analytica-explained
+Hu., M (2020). Cambridge Analytica’s black box. Big Data & Society, June 2020, 1–6. https://doi.org/10.1177/2053951720938091
+Isaak, J., & Hanna, M. (2018). User Data Privacy: Facebook, Cambridge Analytica, and Privacy Protection. Computer, 51(8), 56–59. https://doi.org/10.1109/MC.2018.3191268
+Romano, A. (2018, March 20). The Facebook data breach wasn’t a hack. It was a wake-up call. Vox. https://www.vox.com/2018/3/20/17138756/facebook-data-breach-cambridge-analytica-explained
+Schneble, C., Elger, B., & Shaw, D. (2018). The Cambridge Analytica affair and Internet-mediated research. EMBO Reports, 19, 1–2. https://doi.org/10.15252/embr.201846579
+Smith, R., Grabosky, P., & Urbas, G. (2004). Cyber criminals on trial. Cambridge University Press.
+Woods, A. (2018, March 20). The Cambridge Analytica-Facebook Debacle: A Legal Primer. Lawfare. https://www.lawfareblog.com/cambridge-analytica-facebook-debacle-legal-primer
+Agnew, R. (1992). Foundation for a General Strain Theory of Crime and Delinquency. Criminology, 30(1), 47–87, https://doi.org/10.1111/j.1745-9125.1992.tb01093.x
+Confessore, N. (2018). Cambridge Analytica and Facebook: The Scandal and the Fallout So Far. The New York Times. Retrieved from https://www.nytimes.com/2018/04/04/us/politics/cambridge-analytica-scandal-fallout.html
+Graham-Harrison, E., & Cadwalladr, C. (2018, March 17). Revealed: 50 million Facebook profiles harvested for Cambridge Analytica in major data breach. Retrieved from The Guardian website: https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election
+Hern, A. (2018, May 7). Cambridge Analytica: how did it turn clicks into votes? Retrieved from the Guardian website: https://www.theguardian.com/news/2018/may/06/cambridge-analytica-how-turn-clicks-into-votes-christopher-wylie
+Holt, T. J., Bossler, A. M., & Seigfried-Spellar, K. C. (2018). Cybercrime and digital forensics : an introduction (2nd ed.). Abingdon, Oxon ; New York, Ny: Routledge.
+McAdams, D. P. (2016, May 17). A Psychologist Analyzes Donald Trump’s Personality. Retrieved from The Atlantic website: https://www.theatlantic.com/magazine/archive/2016/06/the-mind-of-donald-trump/480771/
+Murray, M. (2017, August 23). 12 Days That Stunned a Nation: How Hillary Clinton Lost. Retrieved from NBC News website: https://www.nbcnews.com/politics/elections/12-days-stunned-nation-how-hillary-clinton-lost-n794131
+Zhou, L. (2016, April 2). More Than Just a Symbol. Retrieved May 9, 2020, from The Atlantic website: https://www.theatlantic.com/politics/archive/2016/04/more-than-just-a-symbol/476490/
+Cohen L. & Felson M. (1979). Social Change and Crime Rate Trends: A Routine Activity Approach. American Sociological Review, 44(4), 588–608. https://doi.org/10.2307/2094589
+Reyns, B. (2011). Online Routines and Identity Theft Victimisation: Further Expanding Routine Activities Theory Beyonce Direct-Contact Offences. Journal of research in Crime and Delinquency, 50(2), 216-238. https://doi.org/10.1177/0022427811425539
+Reyns, B.W., Henson, B. (2015). The Thief with a Thousand Faces and the Victim with None: Identifying Determinants for Online Identity Theft Victimisation with Routine Activity Theory. International Journal of Offender Therapy and Comparative Criminology, 60(10), 1119-1139. https://doi.org/10.1177/0306624X15572861
+Leukfeldt, R., Yar, M. (2016). Applying Routine Activities Theory to Cybercrime: A Theoretical and Empirical Analysis, Deviant Behaviour, 37(3), 263-280, https://doi.org/10.1080/01639625.2015.1012409 
+Ma, A., & Gilbert, B. (2019). What Is Cambridge Analytica? A Timeline of the Facebook Controversy. Business Insider. Retrieved May 16, 2022, from https://www.businessinsider.com/cambridge-analytica-a-guide-to-the-trump-linked-data-firm-that-harvested-50-million-facebook-profiles-2018-3
+Maruna, S., & Copes, H. (2017). Techniques of Neutralisation: A Theory of its Time and Ahead of its Time. In Delinquency and Drift Revisited. Routledge, 43-58
+Sykes, G. M., & Matza, D. (1957). Techniques of Neutralisation: A theory of delinquency. American sociological review, 22(6), 664-670.
+Wong, J. (2019, March 18). The Cambridge Analytica scandal changed the world – but it didn't change Facebook. The Guardian. https://www.theguardian.com/technology/2019/mar/17/the-cambridge-analytica-scandal-changed-the-world-but-it-didnt-change-facebook
