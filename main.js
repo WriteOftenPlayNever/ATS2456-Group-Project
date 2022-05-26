@@ -115,16 +115,34 @@ class GravityObject {
         
     }
 
+    moveTo(target, range) {
+        let toTarget = p5.Vector.sub(target, this.pos);
+        toTarget.setMag(toTarget.mag() - range);
+        this.vel.add(toTarget);
+    }
+
+    accTo(target, range) {
+        let toTarget = p5.Vector.sub(target, this.pos);
+        toTarget.setMag(toTarget.mag() - range);
+        this.acc.add(toTarget);
+    }
+
+    teleportTo(target, range) {
+        let toTarget = p5.Vector.sub(target, this.pos);
+        toTarget.setMag(toTarget.mag() - range);
+        this.pos.add(toTarget);
+    }
+
     draw() {
-        this.acc.add(0, 0.04);
+        this.acc.add(0, 0.01);
 
         // acceleration becomes velocity
         this.vel.add(this.acc);
         this.acc = createVector(0, 0);
 
         // velocity becomes position
-        if (this.vel.mag() > 20) {
-            this.vel.setMag(20); // Clamp a max velocity
+        if (this.vel.mag() > 100) {
+            this.vel.setMag(100); // Clamp a max velocity
         }
         this.pos.add(this.vel);
     }
@@ -233,22 +251,102 @@ class References extends Effect {
 
 }
 
+class ChainLink extends GravityObject {
+
+    constructor(link_length, x, y) {
+        super(x, y);
+        this.link_length = link_length;
+    }
+
+    draw() {
+        noFill();
+        stroke(10, 185, 10);
+        circle(this.pos.x, this.pos.y, this.link_length * 2);
+    }
+
+}
+
+class TextChainLink extends GravityObject {
+
+    constructor(text, x, y) {
+        super(x, y);
+        this.text = text;
+        textAlign(CENTER, CENTER);
+
+        this.link_length = textWidth(text.split("\n").sort((o, j) => j.length - o.length)[0]) + (textWidth("W"));
+    }
+
+    draw() {
+        textAlign(CENTER, CENTER);
+        textFont('Courier New');
+        textSize(22);
+        fill(10, 185, 10);
+        noStroke();
+
+        text(this.text, this.pos.x, this.pos.y);
+
+        // noFill();
+        // stroke(10, 185, 10);
+        // circle(this.pos.x, this.pos.y, this.link_length * 2);
+    }
+}
+
+class Chain { 
+
+    constructor(link_count, link_length, fixX, fixY, names) {
+        this.text = text;
+        this.link_length = link_length;
+        this.fixture = createVector(fixX, fixY);
+        this.links = [];
+        names.forEach(name => {
+            for (let i = 0; i < link_count; i++) {
+                this.links.push(new ChainLink(link_length, fixX + i * link_length * 1000, fixY));            
+            }
+            this.links.push(new TextChainLink(name, fixX + link_length * 1000, fixY));
+        })
+
+    }
+
+    init() {
+        
+    }
+
+    inverseKinematics() {
+        
+    }
+
+    draw() {
+        // this.links[0].accTo(this.fixture, 0);
+
+        // Reach towards chain end
+        // for (let i = (this.links.length - 2); i > -1; i--) {
+        //     const link = this.links[i];
+            
+        //     link.teleportTo(this.links[i + 1].pos, this.link_length * 5);
+        // }
 
 
+        // this.links[this.links.length - 1].teleportTo(createVector(mouseX, mouseY), 0);
+        this.links[0].teleportTo(createVector(mouseX, mouseY), 0);
+        
+        // Maintain Chain-ness
+        for (let i = 1; i < this.links.length; i++) {
+            const link = this.links[i];
+            
+            link.teleportTo(this.links[i - 1].pos, this.links[i].link_length + this.links[i - 1].link_length);
+        }
+        
+        this.links.forEach(link => link.draw());
+    }
+
+
+
+}
 
 
 const screens = [
     [
         new MouseTracker()
-    ],
-    [
-        // Paragraph display
-    ],
-    [
-        // Gravity display
-    ],
-    [
-        
     ]
 ];
 
@@ -292,13 +390,18 @@ window.setup = function() {
     screens[0].push(new Title(2600, titleText.join("\n"), windowWidth/2, windowHeight/2.2, 12.5));
     screens[0].push(new Fader(subtitleText.length * 5000, 2700, subtitleText));
 
-    screens[1].push(new Paragraph(1000, RATText.join("\n"), 100, 100));
+    screens.push([]);
+    screens[screens.length - 1].push(new Paragraph(1000, RATText.join("\n"), 100, 100));
 
-
+    screens.push([]);
     for (let i  = 0; i < 20; i++) {
-        screens[2].push(new Bubble(30));
+        screens[screens.length - 1].push(new Bubble(30));
     }
 
+    screens.push([]);
+    screens[screens.length - 1].push(new Chain(100, 1, 500, 500, ["Zoey Tan\nWen Xuan", "Selina\nWilkinson", "Sneha\nRoy", "Toby\nNelson", "Wesley\nGriffiths"].sort((o, j) => o.localeCompare(j))));
+
+    screens.push([]);
     screens[screens.length - 1].push(new Title(1000, "References:", windowWidth/10, windowHeight/2, 45));
     screens[screens.length - 1].push(new References(300000, 1500, references));
 }

@@ -1,3 +1,11 @@
+.::    .   .:::.,::::::            ::   .:    :::.     :::      .::..,::::::            :::.             :::::::..     :::.     ::::::::::::
+';;,  ;;  ;;;' ;;;;''''           ,;;   ;;,   ;;`;;    ';;,   ,;;;' ;;;;''''            ;;`;;            ;;;;``;;;;    ;;`;;    ;;;;;;;;''''
+ '[[, [[, [['   [[cccc           ,[[[,,,[[[  ,[[ '[[,   \[[  .[[/    [[cccc            ,[[ '[[,           [[[,/[[['   ,[[ '[[,       [[     
+   Y$c$$$c$P    $$""""           "$$$"""$$$ c$$$cc$$$c   Y$c.$$"     $$""""           c$$$cc$$$c          $$$$$$c    c$$$cc$$$c      $$     
+    "88"888     888oo,__          888   "88o 888   888,   Y88P       888oo,__          888   888,         888b "88bo, 888   888,     88,    
+     "M "M"     """"YUMMM         MMM    YMM YMM   ""`     MP        """"YUMMM         YMM   ""`          MMMM   "W"  YMM   ""`      MMM    
+
+
 A predominant issue raised by the Cambridge Analytica scandal was whether cyberspace has become an enabler for criminal activity. This can be analysed using Cohen and Felson’s (1979) Routine Activities Theory (RAT). 
 
 Under RAT, crime occurs due to the presence of three key elements - a suitable target, a motivated offender and the absence of a capable guardian (Cohen & Felson, 1979). RAT suggests that offenders make choices to offend based on a lack of supervision and the suitability of a given target (Leukfeldt & Yar, 2016).
