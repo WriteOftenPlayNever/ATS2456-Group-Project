@@ -76,6 +76,36 @@ class Title extends Effect {
     }
 }
 
+class Strained extends Title {
+
+    constructor(duration, text, x, y, size) {
+        super(duration, text, x, y, size);
+    }
+
+    init() {
+        super.init();
+    }
+
+    draw() {
+        let progress = (new Date().getTime() - this.startTime.getTime()) / this.duration;
+        textAlign(CENTER, CENTER);
+        textFont('Courier New');
+        textSize(this.size);
+        fill(10, 185, 10);
+        noStroke();
+
+        if (progress > 1) {
+            push();
+            scale(1, 1 - Math.abs(Math.sin((progress - 1)/2)/8, 0));
+            text(this.text, this.x, this.y + windowHeight/3 * Math.abs(Math.sin((progress - 1)/2)/8, 0));
+            pop();
+        } else {
+            text(this.text.slice(0, Math.ceil(this.text.length * progress)), this.x, this.y);
+        }
+    }
+
+}
+
 class Fader extends Effect {
 
     constructor(duration, delay, lines) {
@@ -363,6 +393,10 @@ class Note {
         noStroke();
 
         text(this.text, this.x, this.y, this.width);
+
+        noFill();
+        stroke(10, 185, 10);
+        rect(this.x - this.width * 0.1, this.y - this.width * 0.1, this.width * 1.2, this.width * 1.2);
     }
 
 }
@@ -438,7 +472,7 @@ window.setup = function() {
     screens[screens.length - 1].push(new Paragraph(1000, RATText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
 
     screens.push([]);
-    screens[screens.length - 1].push(new Title(750, strainTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
+    screens[screens.length - 1].push(new Strained(750, strainTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
     screens[screens.length - 1].push(new Paragraph(1000, strainText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
 
     screens.push([]);
