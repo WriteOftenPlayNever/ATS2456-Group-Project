@@ -190,14 +190,14 @@ class Paragraph extends Effect {
         let progress = (new Date().getTime() - this.startTime.getTime()) / this.duration;
         textAlign(LEFT, TOP);
         textFont('Courier New');
-        textSize(18);
+        textSize(17);
         fill(10, 185, 10);
         noStroke();
 
         if (progress > 1) {
-            text(this.text, this.x, this.y, windowWidth * 0.9);
+            text(this.text, this.x, this.y, windowWidth * 0.8);
         } else {
-            text(this.text.slice(0, Math.ceil(this.text.length * progress)), this.x, this.y, windowWidth * 0.9);
+            text(this.text.slice(0, Math.ceil(this.text.length * progress)), this.x, this.y, windowWidth * 0.8);
         }
     }
 
@@ -343,19 +343,51 @@ class Chain {
 
 }
 
+class Note {
 
-const screens = [
-    [
-        new MouseTracker()
-    ]
-];
+    constructor(text, width, x, y) {
+        this.pos = createVector(x, y);
+        this.text = text;
+        this.width = width;
+    }
 
-let titleText, references, RATText;
+    init() {
+
+    }
+
+    draw() {
+        textAlign(LEFT, TOP);
+        textFont('Courier New');
+        textSize(18);
+        fill(10, 185, 10);
+        noStroke();
+
+        text(this.text, this.x, this.y, this.width);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+const screens = [];
+
+let titleText, references, RATText, RATTitle, strainTitle, strainText, cybercrimeText, cybercrimeTitle;
 let subtitleText = [
     "PAY NO ATTENTION TO THAT MAN BEHIND THE CURTAIN.",
     "YOU ARE BEING PROFILED, STAY CALM.",
     "PLEASE DISABLE ADBLOCKER.",
     "I CAN'T BELIEVE IT'S NOT ELECTION FRAUD!",
+    "TRUST US.",
+    "ARE YOU BROWSING IN INCOGNITO MODE?",
     "DO YOU HAVE TWO-FACTOR AUTHENTICATION?",
     "THOSE WHO PLAY WITH THE DEVIL'S TOYS...",
     "PLEASE RATE THIS EXPERIENCE ON A SCALE FROM 1-5.",
@@ -373,6 +405,11 @@ window.preload = function() {
     titleText = loadStrings('title.txt');
     references = loadStrings('references.txt');
     RATText = loadStrings('RAT.txt');
+    RATTitle = loadStrings('wehavearat.txt');
+    strainTitle = loadStrings('StrainTitle.txt');
+    strainText = loadStrings('strain.txt');
+    cybercrimeText = loadStrings('cybercrime.txt');
+    cybercrimeTitle = loadStrings('crimeTitle.txt');
 }
 
 
@@ -387,18 +424,25 @@ window.setup = function() {
     frameRate(144);
     angleMode(RADIANS);
 
-    screens[0].push(new Title(2600, titleText.join("\n"), windowWidth/2, windowHeight/2.2, 12.5));
-    screens[0].push(new Fader(subtitleText.length * 5000, 2700, subtitleText));
+    screens.push([]);
+    screens[screens.length - 1].push(new MouseTracker());
+    screens[screens.length - 1].push(new Title(2600, titleText.join("\n"), windowWidth/2, windowHeight/2.2, 12.5));
+    screens[screens.length - 1].push(new Fader(subtitleText.length * 4800, 2700, subtitleText));
 
     screens.push([]);
-    screens[screens.length - 1].push(new Paragraph(1000, RATText.join("\n"), 100, 100));
+    screens[screens.length - 1].push(new Title(750, cybercrimeTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
+    screens[screens.length - 1].push(new Paragraph(1000, cybercrimeText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
 
     screens.push([]);
-    for (let i  = 0; i < 20; i++) {
-        screens[screens.length - 1].push(new Bubble(30));
-    }
+    screens[screens.length - 1].push(new Title(750, RATTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
+    screens[screens.length - 1].push(new Paragraph(1000, RATText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
 
     screens.push([]);
+    screens[screens.length - 1].push(new Title(750, strainTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
+    screens[screens.length - 1].push(new Paragraph(1000, strainText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
+
+    screens.push([]);
+    screens[screens.length - 1].push(new Title(750, "Credits:", windowWidth * 0.1, windowHeight * 0.1, 40));
     screens[screens.length - 1].push(new Chain(100, 1, 500, 500, ["Zoey Tan\nWen Xuan", "Selina\nWilkinson", "Sneha\nRoy", "Toby\nNelson", "Wesley\nGriffiths"].sort((o, j) => o.localeCompare(j))));
 
     screens.push([]);
