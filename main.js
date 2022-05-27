@@ -375,10 +375,12 @@ class Chain {
 
 class Note {
 
-    constructor(text, width, x, y) {
-        this.pos = createVector(x, y);
+    constructor(text, width, height, x, y) {
+        this.x = x;
+        this.y = y;
         this.text = text;
         this.width = width;
+        this.height = height;
     }
 
     init() {
@@ -388,7 +390,7 @@ class Note {
     draw() {
         textAlign(LEFT, TOP);
         textFont('Courier New');
-        textSize(18);
+        textSize(16.5);
         fill(10, 185, 10);
         noStroke();
 
@@ -396,7 +398,8 @@ class Note {
 
         noFill();
         stroke(10, 185, 10);
-        rect(this.x - this.width * 0.1, this.y - this.width * 0.1, this.width * 1.2, this.width * 1.2);
+        strokeWeight(2);
+        rect(this.x - this.width * 0.1, this.y - this.width * 0.1, this.width * 1.2, this.height);
     }
 
 }
@@ -462,10 +465,12 @@ window.setup = function() {
     screens[screens.length - 1].push(new MouseTracker());
     screens[screens.length - 1].push(new Title(2600, titleText.join("\n"), windowWidth/2, windowHeight/2.2, 12.5));
     screens[screens.length - 1].push(new Fader(subtitleText.length * 4800, 2700, subtitleText));
+    screens[screens.length - 1].push(new Note("NOTE: \nNavigate with the Left and Right arrow keys.", windowWidth * 0.12, windowHeight * 0.11, windowWidth * 0.05, windowWidth * 0.05));
 
     screens.push([]);
     screens[screens.length - 1].push(new Title(750, cybercrimeTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
     screens[screens.length - 1].push(new Paragraph(1000, cybercrimeText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
+    screens[screens.length - 1].push(new Note("NOTE: \nIf the text is incorrectly sized, try zooming in/out and reloading the page (F5).", windowWidth * 0.13, windowHeight * 0.16, windowWidth * 0.05, windowWidth * 0.05));
 
     screens.push([]);
     screens[screens.length - 1].push(new Title(750, RATTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
@@ -478,6 +483,7 @@ window.setup = function() {
     screens.push([]);
     screens[screens.length - 1].push(new Title(750, "Credits:", windowWidth * 0.1, windowHeight * 0.1, 40));
     screens[screens.length - 1].push(new Chain(100, 1, 500, 500, ["Zoey Tan\nWen Xuan", "Selina\nWilkinson", "Sneha\nRoy", "Toby\nNelson", "Wesley\nGriffiths"].sort((o, j) => o.localeCompare(j))));
+    screens[screens.length - 1].push(new Note("NOTE: \nTry moving the mouse :)", windowWidth * 0.13, windowHeight * 0.09, windowWidth * 0.8, windowHeight * 0.1));
 
     screens.push([]);
     screens[screens.length - 1].push(new Title(1000, "References:", windowWidth/10, windowHeight/2, 45));
