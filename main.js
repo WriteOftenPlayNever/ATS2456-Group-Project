@@ -476,11 +476,10 @@ window.setup = function() {
     screens[screens.length - 1].push(new Paragraph(1000, introText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
     screens[screens.length - 1].push(new Note("NOTE: \nIf the text is incorrectly sized, try zooming in/out and reloading the page (F5).", windowWidth * 0.13, windowHeight * 0.16, windowWidth * 0.05, windowWidth * 0.05));
 
-
     screens.push([]);
     screens[screens.length - 1].push(new Title(750, cybercrimeTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
     screens[screens.length - 1].push(new Paragraph(1000, cybercrimeText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
-    
+
     screens.push([]);
     screens[screens.length - 1].push(new Title(750, RATTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
     screens[screens.length - 1].push(new Paragraph(1000, RATText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
