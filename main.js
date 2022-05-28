@@ -417,7 +417,7 @@ class Note {
 
 const screens = [];
 
-let titleText, references, RATText, RATTitle, strainTitle, strainText, cybercrimeText, cybercrimeTitle, introTitle, introText;
+let titleText, references, RATText, RATTitle, strainTitle, strainText, cybercrimeText, cybercrimeTitle, introTitle, introText, neutralTitle, neutralText;
 let subtitleText = [
     "PAY NO ATTENTION TO THAT MAN BEHIND THE CURTAIN.",
     "YOU ARE BEING PROFILED, STAY CALM.",
@@ -449,6 +449,8 @@ window.preload = function() {
     cybercrimeTitle = loadStrings('crimeTitle.txt');
     introTitle = loadStrings('introTitle.txt');
     introText = loadStrings('intro.txt');
+    neutralTitle = loadStrings('neutral.txt');
+    neutralText = loadStrings('neutralText.txt');
 }
 
 
@@ -478,9 +480,14 @@ window.setup = function() {
     screens.push([]);
     screens[screens.length - 1].push(new Title(750, cybercrimeTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
     screens[screens.length - 1].push(new Paragraph(1000, cybercrimeText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
+    
     screens.push([]);
     screens[screens.length - 1].push(new Title(750, RATTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
     screens[screens.length - 1].push(new Paragraph(1000, RATText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
+    
+    screens.push([]);
+    screens[screens.length - 1].push(new Title(750, neutralTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
+    screens[screens.length - 1].push(new Paragraph(1000, neutralText.join("\n"), windowWidth * 0.1, windowHeight * 0.3));
 
     screens.push([]);
     screens[screens.length - 1].push(new Strained(750, strainTitle.join("\n"), windowWidth * 0.5, windowWidth * 0.08, 20));
